@@ -1,24 +1,25 @@
 import { useRouter } from 'expo-router'
 import { Pressable, Text, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { globalStyles } from '../../styles/global'
+import { globalStyles as styles } from '../../styles/global'
 
 export default function OnboardingSlide2() {
   const router = useRouter()
 
   return (
-    <SafeAreaView style={globalStyles.screen}>
-      <View style={globalStyles.contentWrapper}>
-        <Text style={globalStyles.title}>
-            4
-        </Text>
+    <SafeAreaView style={styles.screen}>
+   
+      <View style={styles.contentWrapper}>
+        <Text style={styles.title}>Spot Winning Trades with Just a Photo.</Text>
       </View>
 
       <Pressable
-        style={globalStyles.primaryButton}
-        onPress={() => router.push('/onboarding/slide4')}
+        style={styles.primaryButton}
+        onPress={() => router.push('/onboarding/slide2' as any)}
+        accessibilityRole="button"
+        accessibilityLabel="Next"
       >
-        <Text style={globalStyles.primaryButtonText}>Next</Text>
+        <Text style={styles.primaryButtonText}>Next</Text>
       </Pressable>
     </SafeAreaView>
   )
