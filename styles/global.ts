@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+// styles/global.ts
 
 export const colors = {
   background: "#0E1419",
@@ -6,19 +7,34 @@ export const colors = {
   white: '#FFFFFF',
 }
 
+export const gradients = {
+  box: {
+    normal: ['#23272A', '#2B2F32'] as const,
+    selected: ['#FFFFFF', '#FFFFFF'] as const,
+  },
+}
+
+export const textColors = {
+  box: {
+    normal: '#FFFFFF',
+    selected: '#000000',
+  },
+}
+
+
 export const globalStyles = StyleSheet.create({
   screen: {
     flex: 1,
     backgroundColor: colors.background,
-    alignItems: 'center',
-    justifyContent: 'center',
-    position: 'relative',
   },
-  contentWrapper: {
-    width: 277,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+
+contentWrapper: {
+  flex: 1,
+  paddingTop: 100, // ← Réduit un peu
+  alignItems: 'center',
+  justifyContent: 'center', // ← Ajoute ça pour centrer verticalement
+},
+
   title: {
     color: colors.white,
     fontFamily: 'Inter',
@@ -27,6 +43,29 @@ export const globalStyles = StyleSheet.create({
     textAlign: 'center',
     lineHeight: 28,
   },
+
+  subtitle: {
+    color: colors.white,
+    fontFamily: 'Inter',
+    fontSize: 16,
+    fontWeight: '400',
+    textAlign: 'center',
+    lineHeight: 22,
+    opacity: 0.8,
+    marginTop: 10,
+    width: 280,
+  },
+
+  gradientBox: {
+    width: 334,
+    height: 54,
+    borderRadius: 19,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 15,
+    overflow: 'hidden',
+  },
+
   primaryButton: {
     position: 'absolute',
     bottom: 40,
@@ -38,6 +77,7 @@ export const globalStyles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+
   primaryButtonText: {
     color: colors.white,
     fontWeight: '700',
